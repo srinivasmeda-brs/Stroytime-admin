@@ -45,15 +45,15 @@
                    <td><%= users[i].categories.map(e => e.name).join(', ') || '-' %></td>
                     <td>
                    <% if (users[i].saved_stories.length) { %>
-                    <a role="button" class="user-stories" data-url='/admin/users/<%= users[i].id %>/libraries'><%= users[i].saved_stories.length %></a>
+                    <a role="button" class="user-stories" data-url='/admin/users/<%= users[i]._id %>/libraries'><%= users[i].saved_stories.length %></a>
                    <% } else { %>
                     -
                    <% } %>
                     </td>
                    <td>
                     <!-- <a title="Edit User" href="/admin/users/<%=users[i].id %>/edit/"><i class="fas fa-edit"></i></a>&nbsp;&nbsp; -->
-                    <a data-bs-toggle="modal" data-bs-target="#delete-user-<%= users[i].id %>" class="delete-users" role="button" data-url="/admin/users/<%=users[i].id %>/destroy"><i class="fas fa-trash-alt text-danger"></i></a>
-                    <div class="modal fade" id="delete-user-<%= users[i].id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <a data-bs-toggle="modal" data-bs-target="#delete-user-<%= users[i]._id %>" class="delete-users" role="button" data-url="/admin/users/<%=users[i].id %>/destroy"><i class="fas fa-trash-alt text-danger"></i></a>
+                    <div class="modal fade" id="delete-user-<%= users[i]._id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -67,7 +67,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                            <button data-url="/admin/users/<%=users[i].id %>/destroy" type="button" class="btn btn-outline-danger delete-user">Delete</button>
+                            <button data-url="/admin/users/<%=users[i]._id %>/destroy" type="button" class="btn btn-outline-danger delete-user">Delete</button>
                           </div>
                         </div>
                       </div>
